@@ -1,0 +1,24 @@
+{
+  "name": "oslc-site-content-negotiation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RDF Content Negotiation handler for the OSLC website",
+  "main": "negotiation.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node negotiation.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSLC/oslc-site-content-negotiation.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OSLC/oslc-site-content-negotiation/issues"
+  },
+  "homepage": "https://github.com/OSLC/oslc-site-content-negotiation#readme",
+  "keywords": []
+}
