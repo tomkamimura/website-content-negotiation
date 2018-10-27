@@ -1,214 +1,54 @@
 var express = require('express');
 var app = express();
 
-var baseURL = '/var/www/oslc.co/public/ns/';
+var baseDir = '/var/www/oslc.co/public/ns/';
 
-app.get('/ns/core/', function (req, res) {
+// base of the URI that gets prepended to the redirects
+// var baseURI = 'https://open-services.net/ns/';
+var baseURI = '/ns/';
 
-var  file = 'core/core-vocab';
+// just a map to avoid repeating constants
+const extMap = {
+    'application/ld+json': '.jsonld',
+    'text/turtle': '.ttl',
+    'application/rdf+xml': '.rdf',
+}
 
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part7-core-vocabulary.html');
-        }
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
+function serveNeg(specName, htmlRedir) {
+    return function (req, res) {
+        // the order is important; it will be used unless the client uses q-values
+        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml", "text/html"]);
+        console.log(rdfType);
+        if (rdfType === "text/html") {
+            res.redirect(303, htmlRedir);
+        } else if(rdfType) {
+            // we can either do a 303 redirect OR send the file
+            // res.redirect(303, baseURI + specName + extMap[rdfType]);
+            res.sendFile(specName + extMap[rdfType], { root: baseDir });
+        } else {
             res.status(406).send();
         }
-    });
-});
+    };
+}
 
-app.get('/ns/config/', function (req, res) {
+app.get('/ns/core/', serveNeg('core/core-vocab', 'http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part7-core-vocabulary.html'));
 
-var  file = 'config/config-vocab';
+app.get('/ns/config/', serveNeg('config/config-vocab', 'https://tools.oasis-open.org/version-control/browse/wsvn/oslc-core/trunk/specs/config/config-vocab.html'));
 
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'https://tools.oasis-open.org/version-control/browse/wsvn/oslc-core/trunk/specs/config/config-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
+app.get('/ns/cm/', serveNeg('cm/change-mgt-vocab', 'http://docs.oasis-open.org/oslc-domains/cm/v3.0/cm-v3.0-part2-change-mgt-vocab.html'));
 
-app.get('/ns/rm/', function (req, res) {
+app.get('/ns/rm/', serveNeg('rm/requirements-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/rm/requirements-management-vocab.html'));
 
-var  file = 'rm/requirements-management-vocab';
+app.get('/ns/qm/', serveNeg('qm/qm', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/qm/quality-management-vocab.html'));
 
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/rm/requirements-management-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
+app.get('/ns/am/', serveNeg('am/architecture-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/am/architecture-management-vocab.html'));
 
-app.get('/ns/cm/', function (req, res) {
+app.get('/ns/asset/', serveNeg('asset/asset-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/asset/asset-management-vocab.html'));
 
-var  file = 'cm/change-mgt-vocab';
+app.get('/ns/auto/', serveNeg('auto/automation-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/auto/automation-vocab.html'));
 
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://docs.oasis-open.org/oslc-domains/cm/v3.0/cm-v3.0-part2-change-mgt-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
+app.get('/ns/perfmon/', serveNeg('perfmon/performance-monitoring-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/perfmon/performance-monitoring-vocab.html'));
 
-app.get('/ns/qm/', function (req, res) {
-
-var  file = 'qm/qm';
-
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/qm/quality-management-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
-
-app.get('/ns/am/', function (req, res) {
-
-var  file = 'am/architecture-management-vocab';
-
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/am/architecture-management-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
-
-app.get('/ns/asset/', function (req, res) {
-
-var  file = 'asset/asset-management-vocab';
-
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/asset/asset-management-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
-
-app.get('/ns/auto/', function (req, res) {
-
-var  file = 'auto/automation-vocab';
-
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'http://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/auto/automation-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
-
-app.get('/ns/perfmon/', function (req, res) {
-
-var  file = 'perfmon/performance-monitoring-vocab';
-
-    res.format({
-        'text/html': function () {
-            res.redirect(301, 'https://htmlpreview.github.io/?https://github.com/oasis-tcs/oslc-domains/blob/master/perfmon/performance-monitoring-vocab.html');
-	}
-        , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
-        }
-        , 'application/ld+json': function () {
-            res.status(303).sendFile(file + '.jsonld', { root: baseURL });
-        }
-        , 'text/turtle': function () {
-            res.status(303).sendFile(file + '.ttl', { root: baseURL });
-        }
-	, 'default': function () {
-            res.status(406).send();
-        }
-    });
-});
 
 app.listen(3000, function () {
     console.log('OSLC content negotiation listening on port 3000!');
