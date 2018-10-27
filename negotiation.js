@@ -17,8 +17,9 @@ const extMap = {
 function serveNeg(specName, htmlRedir) {
     return function (req, res) {
         // the order is important; it will be used unless the client uses q-values
-        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml"]);
-        if (req.accepts("text/html")) {
+        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml", "text/html"]);
+        console.log(rdfType);
+        if (rdfType === "text/html") {
             res.redirect(303, htmlRedir);
         } else if(rdfType) {
             // we can either do a 303 redirect OR send the file
