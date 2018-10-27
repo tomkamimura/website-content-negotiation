@@ -12,7 +12,7 @@ var  file = 'core/core-vocab';
             res.redirect(301, 'http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part7-core-vocabulary.html');
         }
         , 'application/rdf+xml': function () {
-            res.status(303).sendFile(file + '.rdf', { root: baseURL });
+            res.res.redirect(303, "/ns/core/core-vocab.rdf");
         }
         , 'application/ld+json': function () {
             res.status(303).sendFile(file + '.jsonld', { root: baseURL });
