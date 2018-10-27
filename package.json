@@ -1,0 +1,24 @@
+{
+  "name": "oslc-site-content-negotiation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "negotiation.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSLC/oslc-site-content-negotiation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSLC/oslc-site-content-negotiation/issues"
+  },
+  "homepage": "https://github.com/OSLC/oslc-site-content-negotiation#readme",
+  "keywords": []
+}
