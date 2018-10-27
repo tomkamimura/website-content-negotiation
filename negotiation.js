@@ -18,12 +18,12 @@ function serveNeg(specName, htmlRedir) {
     return function (req, res) {
         // the order is important; it will be used unless the client uses q-values
         var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml"]);
-        if(rdfType) {
+        if (req.accepts("text/html")) {
+            res.redirect(303, htmlRedir);
+        } else if(rdfType) {
             // we can either do a 303 redirect OR send the file
             // res.redirect(303, baseURI + specName + extMap[rdfType]);
             res.sendFile(specName + extMap[rdfType], { root: baseDir });
-        } else if (req.accepts("text/html")) {
-            res.redirect(303, htmlRedir);
         } else {
             res.status(406).send();
         }
