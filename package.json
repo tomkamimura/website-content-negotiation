@@ -1,0 +1,23 @@
+{
+  "name": "oslc-site-content-negotiation",
+  "version": "1.0.0",
+  "description": "Content Negotiation for the OSLC website",
+  "main": "negotiation.js",
+  "scripts": {
+    "test": "nodejs negotiation.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSLC/oslc-site-content-negotiation.git"
+  },
+  "keywords": [
+    "content",
+    "negotiation"
+  ],
+  "author": "Koneksys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSLC/oslc-site-content-negotiation/issues"
+  },
+  "homepage": "https://github.com/OSLC/oslc-site-content-negotiation#readme"
+}
