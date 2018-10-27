@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "run": "node negotiation.js"
+    "start": "node negotiation.js"
   },
   "repository": {
     "type": "git",
