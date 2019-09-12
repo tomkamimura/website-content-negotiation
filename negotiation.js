@@ -12,12 +12,13 @@ const extMap = {
     'application/ld+json': '.jsonld',
     'text/turtle': '.ttl',
     'application/rdf+xml': '.rdf',
+    'application/n-triples': '.nt',
 }
 
 function serveNeg(specName, htmlRedir) {
     return function (req, res) {
         // the order is important; it will be used unless the client uses q-values
-        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml", "text/html"]);
+        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml", 'application/n-triples', "text/html"]);
         console.log(rdfType);
         if (rdfType === "text/html") {
             res.redirect(303, htmlRedir);
@@ -41,7 +42,7 @@ app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://rawcdn.g
 
 app.get('/ns/qm', serveNeg('qm/qm', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/qm/quality-management-vocab.html'));
 
-app.get('/ns/am', serveNeg('am/architecture-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/am/architecture-management-vocab.html'));
+app.get('/ns/am', serveNeg('am/am', 'https://oslc-op.github.io/oslc-specs/specs/am/architecture-management-vocab.html'));
 
 app.get('/ns/asset', serveNeg('asset/asset-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/asset/asset-management-vocab.html'));
 
