@@ -44,7 +44,7 @@ app.get('/ns/qm', serveNeg('qm/qm', 'https://rawcdn.githack.com/oasis-tcs/oslc-d
 
 app.get('/ns/am', serveNeg('am/am', 'https://oslc-op.github.io/oslc-specs/specs/am/architecture-management-vocab.html'));
 
-app.get('/ns/asset', serveNeg('asset/asset-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/asset/asset-management-vocab.html'));
+app.get('/ns/asset', serveNeg('asset/asset', 'https://oslc-op.github.io/oslc-specs/specs/asset/asset-management-vocab.html'));
 
 app.get('/ns/auto', serveNeg('auto/automation-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/auto/automation-vocab.html'));
 
