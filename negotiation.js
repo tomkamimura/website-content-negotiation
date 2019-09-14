@@ -32,24 +32,25 @@ function serveNeg(specName, htmlRedir) {
     };
 }
 
-app.get('/ns/core', serveNeg('core/core-vocab', 'http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part7-core-vocabulary.html'));
+app.get('/ns/core', serveNeg('core/core-vocab', 'https://archive.open-services.net/bin/view/Main/OslcCoreSpecification.html'));
 
-app.get('/ns/config', serveNeg('config/config-vocab', 'https://tools.oasis-open.org/version-control/browse/wsvn/oslc-core/trunk/specs/config/config-vocab.html'));
+app.get('/ns/config', serveNeg('config/config-vocab', 'https://oslc-op.github.io/oslc-specs/specs/config/oslc-config-mgt.html'));
 
-app.get('/ns/cm', serveNeg('cm/change-mgt-vocab', 'http://docs.oasis-open.org/oslc-domains/cm/v3.0/cm-v3.0-part2-change-mgt-vocab.html'));
+app.get('/ns/cm', serveNeg('cm/cm', 'https://archive.open-services.net/bin/view/Main/CmSpecificationV2.html'));
 
-app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/rm/requirements-management-vocab.html'));
+app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://archive.open-services.net/bin/view/Main/RmSpecificationV2a8d9.html'));
 
-app.get('/ns/qm', serveNeg('qm/qm', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/qm/quality-management-vocab.html'));
+app.get('/ns/qm', serveNeg('qm/qm', 'https://archive.open-services.net/bin/view/Main/QmSpecificationV2.html'));
 
-app.get('/ns/am', serveNeg('am/am', 'https://oslc-op.github.io/oslc-specs/specs/am/architecture-management-vocab.html'));
+app.get('/ns/am', serveNeg('am/am', 'https://archive.open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/index.html'));
 
-app.get('/ns/asset', serveNeg('asset/asset', 'https://oslc-op.github.io/oslc-specs/specs/asset/asset-management-vocab.html'));
+app.get('/ns/asset', serveNeg('asset/asset', 'https://archive.open-services.net/wiki/asset-management/OSLC-Asset-Management-2.0-Specification/index.html'));
 
-app.get('/ns/auto', serveNeg('auto/automation-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/auto/automation-vocab.html'));
+app.get('/ns/auto', serveNeg('auto/automation-vocab', 'https://archive.open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.0/index.html'));
 
-app.get('/ns/perfmon', serveNeg('perfmon/performance-monitoring-vocab', 'https://rawcdn.githack.com/oasis-tcs/oslc-domains/6bb8484024b2eaeb26f87b0d2d3a168039629c2e/perfmon/performance-monitoring-vocab.html'));
+app.get('/ns/perfmon', serveNeg('perfmon/performance-monitoring-vocab', 'https://archive.open-services.net/wiki/performance-monitoring/OSLC-Performance-Monitoring-Specification-Version-2.0/index.html'));
 
+app.get('/ns/ems', serveNeg('ems/ems', 'https://archive.open-services.net/wiki/estimation-and-measurement/EMS-1.0-REST-API-Data-Model/index.html'));
 
 app.listen(3000, function () {
     console.log('OSLC content negotiation listening on port 3000!');
