@@ -32,7 +32,7 @@ function serveNeg(specName, htmlRedir) {
     };
 }
 
-app.get('/ns/core', serveNeg('core/core-vocab', 'https://archive.open-services.net/bin/view/Main/OslcCoreSpecification.html'));
+app.get('/ns/core', serveNeg('core/core-vocab', 'https://archive.open-services.net/wiki/core/CoreVocabulary/index.html'));
 
 app.get('/ns/config', serveNeg('config/config-vocab', 'https://oslc-op.github.io/oslc-specs/specs/config/oslc-config-mgt.html'));
 
