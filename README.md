@@ -7,3 +7,9 @@
 
     npm i
     npm start
+
+## Deployment
+
+    cd ~/workspace/oslc-site-content-negotiation/
+    git pull
+    pm2 restart negotiation.js --update-env
