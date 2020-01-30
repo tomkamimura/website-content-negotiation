@@ -38,7 +38,7 @@ app.get('/ns/config', serveNeg('config/config-vocab', 'https://oslc-op.github.io
 
 app.get('/ns/cm', serveNeg('cm/cm', 'https://archive.open-services.net/bin/view/Main/CmVocabulary.html'));
 
-app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://archive.open-services.net/bin/view/Main/RmSpecificationV2a8d9.html'));
+app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://archive.open-services.net/bin/view/Main/RmVocabulary.html'));
 
 app.get('/ns/qm', serveNeg('qm/qm', 'https://archive.open-services.net/bin/view/Main/QmVocabulary.html'));
 
