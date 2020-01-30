@@ -34,7 +34,7 @@ function serveNeg(specName, htmlRedir) {
 
 app.get('/ns/core', serveNeg('core/core-vocab', 'https://archive.open-services.net/wiki/core/CoreVocabulary/index.html'));
 
-app.get('/ns/config', serveNeg('config/config-vocab', 'https://oslc-op.github.io/oslc-specs/specs/config/oslc-config-mgt.html'));
+app.get('/ns/config', serveNeg('config/config-vocab', 'https://oslc-op.github.io/oslc-specs/specs/config/config-vocab.html'));
 
 app.get('/ns/cm', serveNeg('cm/cm', 'https://archive.open-services.net/bin/view/Main/CmVocabulary.html'));
 
