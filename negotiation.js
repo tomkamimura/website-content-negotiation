@@ -40,7 +40,7 @@ app.get('/ns/cm', serveNeg('cm/cm', 'https://archive.open-services.net/bin/view/
 
 app.get('/ns/rm', serveNeg('rm/requirements-management-vocab', 'https://archive.open-services.net/bin/view/Main/RmSpecificationV2a8d9.html'));
 
-app.get('/ns/qm', serveNeg('qm/qm', 'https://archive.open-services.net/bin/view/Main/QmSpecificationV2.html'));
+app.get('/ns/qm', serveNeg('qm/qm', 'https://archive.open-services.net/bin/view/Main/QmVocabulary.html'));
 
 app.get('/ns/am', serveNeg('am/am', 'https://archive.open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Vocabulary/index.html'));
 
