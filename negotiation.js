@@ -46,7 +46,7 @@ app.get('/ns/am', serveNeg('am/am', 'https://archive.open-services.net/wiki/arch
 
 app.get('/ns/asset', serveNeg('asset/asset', 'https://archive.open-services.net/wiki/asset-management/OSLC-Asset-Management-Vocabulary/index.html'));
 
-app.get('/ns/auto', serveNeg('auto/automation-vocab', 'https://archive.open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.0/index.html'));
+app.get('/ns/auto', serveNeg('auto/automation-vocab', 'https://archive.open-services.net/wiki/automation/OSLC-Automation-Vocabulary/index.html'));
 
 app.get('/ns/perfmon', serveNeg('perfmon/performance-monitoring-vocab', 'https://archive.open-services.net/wiki/performance-monitoring/OSLC-Performance-Monitoring-Vocabulary/index.html'));
 
