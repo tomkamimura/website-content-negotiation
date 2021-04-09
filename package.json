@@ -6,7 +6,8 @@
   "main": "negotiation.js",
   "dependencies": {
     "compression": "^1.7.4",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "yaml": "^1.10.2"
   },
   "devDependencies": {},
   "scripts": {
