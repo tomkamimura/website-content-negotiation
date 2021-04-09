@@ -5,6 +5,7 @@
   "description": "RDF Content Negotiation handler for the OSLC website",
   "main": "negotiation.js",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.16.4"
   },
   "devDependencies": {},

@@ -1,7 +1,10 @@
+var compression = require('compression')
 var express = require('express');
 var app = express();
+app.use(compression())
 
 var baseDir = '/var/www/oslc.co/public/ns/';
+// var baseDir = '/Users/andrew/git/oslc/web/website/content/ns';
 
 // base of the URI that gets prepended to the redirects
 // var baseURI = 'https://open-services.net/ns/';
@@ -18,7 +21,8 @@ const extMap = {
 function serveNeg(specName, htmlRedir) {
     return function (req, res) {
         // the order is important; it will be used unless the client uses q-values
-        var rdfType = req.accepts(["application/ld+json", "text/turtle", "application/rdf+xml", 'application/n-triples', "text/html"]);
+        var rdfType = req.accepts(["application/ld+json", "text/turtle", 
+            "application/rdf+xml", 'application/n-triples', "text/html"]);
         console.log(rdfType);
         if (rdfType === "text/html") {
             res.redirect(303, htmlRedir);
