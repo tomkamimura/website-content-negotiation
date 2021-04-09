@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-set -eExuo pipefail
+set -eEuo pipefail
 red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
 URI_BASE="http://localhost:3000"
-# URI_BASE="http://open-services.net"
+if getopts "p" arg; then
+    URI_BASE="http://open-services.net"
+    echo "${green}Running production tests${reset}"
+else
+    echo "${red}Running tests locally${reset}"
+fi
 
 function cleanup_on_exit {
     echo "${red}SOME TESTS FAILED${reset}"
@@ -15,6 +20,7 @@ trap cleanup_on_exit ERR
 
 
 function test_ns() {
+    echo "Running tests on '$1'"
     curl -s --fail-with-body -H "Accept: text/turtle" -L "${URI_BASE}/$1" > /dev/null
     curl -s --fail-with-body -H "Accept: application/rdf+xml" -L "${URI_BASE}/$1" > /dev/null
     curl -s --fail-with-body -H "Accept: application/n-triples" -L "${URI_BASE}/$1" > /dev/null
@@ -33,6 +39,6 @@ test_ns "ns/am"
 test_ns "ns/asset"
 test_ns "ns/auto"
 test_ns "ns/perfmon"
-test_ns "ns/ems"
+# test_ns "ns/ems"
 
 echo "${green}ALL TESTS PASSED${reset}"
