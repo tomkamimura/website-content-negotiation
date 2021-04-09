@@ -38,6 +38,11 @@ function serveNegYaml(ns_entry, base_dir) {
         } else if(rdfType) {
             // we can either do a 303 redirect OR send the file
             // res.redirect(303, baseURI + specName + extMap[rdfType]);
+            if(ns_entry.core_version) {
+                res.set('OSLC-Core-Version', ns_entry.core_version);
+            } else {
+                console.log(`${ns_entry.prefix} lacks OSLC-Core-Version`)
+            }
             res.sendFile(fileMap[rdfType], { root: base_dir });
         } else {
             res.status(406).send();
