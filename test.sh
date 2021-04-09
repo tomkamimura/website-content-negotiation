@@ -31,8 +31,9 @@ function test_ns() {
 
 test_ns "ns/core"
 test_ns "ns/core/shapes/3.0"
-test_ns "ns/config"
 test_ns "ns/cm"
+test_ns "ns/cm/shapes/3.0"
+test_ns "ns/config"
 test_ns "ns/rm"
 test_ns "ns/qm"
 test_ns "ns/am"
