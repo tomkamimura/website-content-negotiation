@@ -1,6 +1,5 @@
-# base_dir: "/var/www/oslc.co/public/ns/"
-base_dir: "/Users/andrew/git/oslc/web/website/content/ns"
-# compression: true
+base_dir: "/var/www/oslc.co/public/ns/"
+compression: true
 # cors_allowed: true
 ns_definitions:
   - prefix: "/ns/core"

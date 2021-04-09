@@ -11,7 +11,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/negotiation.js"
+            "program": "${workspaceFolder}/negotiation.js",
+            "args": ["--dev_base=/Users/andrew/git/oslc/web/website/content/ns"]
         }
     ]
 }

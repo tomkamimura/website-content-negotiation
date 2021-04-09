@@ -5,8 +5,8 @@
 
 ## Getting started
 
-    npm i
-    npm start
+    npm ci
+    npm start --dev_base=/Users/andrew/git/oslc/web/website/content/ns
 
 ## Deployment
 
