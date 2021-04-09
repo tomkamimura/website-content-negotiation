@@ -50,7 +50,7 @@ ns_definitions:
       ntriples: "rm/requirements-management-vocab.nt"
       jsonld: "rm/requirements-management-vocab.jsonld"
       turtle: "rm/requirements-management-vocab.ttl"
-  - prefix: "/ns/rm/shapes/3.0"
+  - prefix: "/ns/rm/shapes/2.1"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/ps01/requirements-management-shapes.html"
     files:
