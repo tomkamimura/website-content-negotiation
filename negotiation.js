@@ -1,6 +1,7 @@
 const fs = require('fs')
 const YAML = require('yaml')
 var express = require('express')
+var cors = require('cors')
 
 var argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 const file = fs.readFileSync('./config/conneg.yml', 'utf8')
@@ -14,6 +15,12 @@ if (config.compression) {
     console.log("Compression not enabled");
 }
 
+var cors_options = {
+    origin: true, // any
+    methods: ['GET'], // no need for PUT or POST
+    allowedHeaders: ['Content-Type', 'OSLC-Core-Version'],
+    exposedHeaders: ['OSLC-Core-Version'], //TODO add to Core 3.1 spec
+}
 
 function serveNegYaml(ns_entry, base_dir) {
     return function (req, res) {
@@ -40,7 +47,8 @@ function serveNegYaml(ns_entry, base_dir) {
 
 const yml_base_dir = argv.dev_base ? argv.dev_base : config.base_dir
 config.ns_definitions.forEach(ns_entry => {
-    app.get(ns_entry.prefix, serveNegYaml(ns_entry, yml_base_dir))
+    app.options(ns_entry.prefix, cors(cors_options))
+    app.get(ns_entry.prefix, cors(cors_options), serveNegYaml(ns_entry, yml_base_dir))
 });
 
 app.listen(3000, function () {
