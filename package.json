@@ -5,7 +5,11 @@
   "description": "RDF Content Negotiation handler for the OSLC website",
   "main": "negotiation.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "yaml": "^1.10.2",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {},
   "scripts": {
