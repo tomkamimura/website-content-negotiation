@@ -27,7 +27,7 @@ ns_definitions:
       turtle: "config/config-vocab.ttl"
   - prefix: "/ns/cm"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/ps01/change-mgt-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-vocab.html"
     files:
       rdfxml: "cm/change-mgt-vocab.rdf"
       ntriples: "cm/change-mgt-vocab.nt"
@@ -35,7 +35,7 @@ ns_definitions:
       turtle: "cm/change-mgt-vocab.ttl"
   - prefix: "/ns/cm/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/ps01/change-mgt-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-shapes.html"
     files:
       rdfxml: "cm/change-mgt-shapes.rdf"
       ntriples: "cm/change-mgt-shapes.nt"
@@ -43,7 +43,7 @@ ns_definitions:
       turtle: "cm/change-mgt-shapes.ttl"
   - prefix: "/ns/rm"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/ps01/requirements-management-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/os/requirements-management-vocab.html"
     files:
       rdfxml: "rm/requirements-management-vocab.rdf"
       ntriples: "rm/requirements-management-vocab.nt"
@@ -51,7 +51,7 @@ ns_definitions:
       turtle: "rm/requirements-management-vocab.ttl"
   - prefix: "/ns/rm/shapes/2.1"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/ps01/requirements-management-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/os/requirements-management-shapes.html"
     files:
       rdfxml: "rm/requirements-management-shapes.rdf"
       ntriples: "rm/requirements-management-shapes.nt"
