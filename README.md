@@ -13,13 +13,14 @@
 On the server:
 
     cd ~/workspace/oslc-site-content-negotiation/
-    git pull
     git checkout master
+    git pull
     npm ci
     npm i -g pm2
     pm2 update
-    pm2 restart negotiation.js --update-env
+    pm2 restart negotiation.js --update-env || NODE_ENV=production pm2 start negotiation.js
     pm2 save
+    pm2 status
 
 On the dev machine:
 
