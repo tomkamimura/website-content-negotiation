@@ -18,7 +18,7 @@ ns_definitions:
       jsonld: "core/core-shapes.jsonld"
       turtle: "core/core-shapes.ttl"
   - prefix: "/ns/config"
-    core_version: "1.0"
+    core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-vocab.html"
     files:
       rdfxml: "config/config-vocab.rdf"
