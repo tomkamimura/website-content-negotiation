@@ -3,7 +3,7 @@ compression: true
 ns_definitions:
   - prefix: "/ns/core"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/ps01/core-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/os/core-vocab.html"
     files:
       rdfxml: "core/core-vocab.rdf"
       ntriples: "core/core-vocab.nt"
@@ -11,20 +11,28 @@ ns_definitions:
       turtle: "core/core-vocab.ttl"
   - prefix: "/ns/core/shapes/3.0"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/ps01/core-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/os/core-shapes.html"
     files:
       rdfxml: "core/core-shapes.rdf"
       ntriples: "core/core-shapes.nt"
       jsonld: "core/core-shapes.jsonld"
       turtle: "core/core-shapes.ttl"
   - prefix: "/ns/config"
-    core_version: "2.0" # these are old files
-    html_uri: "https://oslc-op.github.io/oslc-specs/specs/config/config-vocab.html"
+    core_version: "3.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-vocab.html"
     files:
       rdfxml: "config/config-vocab.rdf"
       ntriples: "config/config-vocab.nt"
       jsonld: "config/config-vocab.jsonld"
       turtle: "config/config-vocab.ttl"
+  - prefix: "/ns/config/shapes/1.0"
+    core_version: "3.0"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-resources.html"
+    files:
+      rdfxml: "config/config-shapes.rdf"
+      ntriples: "config/config-shapes.nt"
+      jsonld: "config/config-shapes.jsonld"
+      turtle: "config/config-shapes.ttl"
   - prefix: "/ns/cm"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-vocab.html"
