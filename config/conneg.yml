@@ -1,6 +1,7 @@
 base_dir: "/var/www/oslc.co/public/ns/"
 compression: true
 ns_definitions:
+
   - prefix: "/ns/core"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/os/core-vocab.html"
@@ -9,6 +10,7 @@ ns_definitions:
       ntriples: "core/core-vocab.nt"
       jsonld: "core/core-vocab.jsonld"
       turtle: "core/core-vocab.ttl"
+
   - prefix: "/ns/core/shapes/3.0"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/core/v3.0/os/core-shapes.html"
@@ -17,6 +19,7 @@ ns_definitions:
       ntriples: "core/core-shapes.nt"
       jsonld: "core/core-shapes.jsonld"
       turtle: "core/core-shapes.ttl"
+
   - prefix: "/ns/config"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-vocab.html"
@@ -25,6 +28,7 @@ ns_definitions:
       ntriples: "config/config-vocab.nt"
       jsonld: "config/config-vocab.jsonld"
       turtle: "config/config-vocab.ttl"
+
   - prefix: "/ns/config/shapes/1.0"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/config/v1.0/psd01/config-resources.html"
@@ -33,6 +37,7 @@ ns_definitions:
       ntriples: "config/config-shapes.nt"
       jsonld: "config/config-shapes.jsonld"
       turtle: "config/config-shapes.ttl"
+
   - prefix: "/ns/cm"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-vocab.html"
@@ -41,6 +46,7 @@ ns_definitions:
       ntriples: "cm/change-mgt-vocab.nt"
       jsonld: "cm/change-mgt-vocab.jsonld"
       turtle: "cm/change-mgt-vocab.ttl"
+
   - prefix: "/ns/cm/shapes/3.0"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/cm/v3.0/os/change-mgt-shapes.html"
@@ -49,6 +55,7 @@ ns_definitions:
       ntriples: "cm/change-mgt-shapes.nt"
       jsonld: "cm/change-mgt-shapes.jsonld"
       turtle: "cm/change-mgt-shapes.ttl"
+
   - prefix: "/ns/rm"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/os/requirements-management-vocab.html"
@@ -57,6 +64,7 @@ ns_definitions:
       ntriples: "rm/requirements-management-vocab.nt"
       jsonld: "rm/requirements-management-vocab.jsonld"
       turtle: "rm/requirements-management-vocab.ttl"
+
   - prefix: "/ns/rm/shapes/2.1"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/rm/v2.1/os/requirements-management-shapes.html"
@@ -65,6 +73,7 @@ ns_definitions:
       ntriples: "rm/requirements-management-shapes.nt"
       jsonld: "rm/requirements-management-shapes.jsonld"
       turtle: "rm/requirements-management-shapes.ttl"
+
   - prefix: "/ns/qm"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/ps01/quality-management-vocab.html"
@@ -73,6 +82,7 @@ ns_definitions:
       ntriples: "qm/quality-management-vocab.nt"
       jsonld: "qm/quality-management-vocab.jsonld"
       turtle: "qm/quality-management-vocab.ttl"
+
   - prefix: "/ns/qm/shapes/2.1"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/ps01/quality-management-shapes.html"
@@ -81,6 +91,7 @@ ns_definitions:
       ntriples: "qm/quality-management-shapes.nt"
       jsonld: "qm/quality-management-shapes.jsonld"
       turtle: "qm/quality-management-shapes.ttl"
+
   - prefix: "/ns/am"
     core_version: "2.0"
     html_uri: "https://archive.open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Vocabulary/index.html"
@@ -89,7 +100,8 @@ ns_definitions:
       ntriples: "am/am.nt"
       jsonld: "am/am.jsonld"
       turtle: "am/am.ttl"
-  - prefix: "/ns/trs"
+
+  - prefix: "/ns/core/trs"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
     files:
@@ -97,7 +109,8 @@ ns_definitions:
       ntriples: "trs/trs-vocab.nt"
       jsonld: "trs/trs-vocab.jsonld"
       turtle: "trs/trs-vocab.ttl"
-  - prefix: "/ns/trspatch"
+
+  - prefix: "/ns/core/trspatch"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-vocab.html"
     files:
@@ -105,6 +118,7 @@ ns_definitions:
       ntriples: "trs/trs-vocab.nt"
       jsonld: "trs/trs-vocab.jsonld"
       turtle: "trs/trs-vocab.ttl"
+
   - prefix: "/ns/trs/shapes/3.0"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open-projects.org/oslc-op/trs/v3.0/psd01/tracked-resource-set-shapes.html"
@@ -113,6 +127,7 @@ ns_definitions:
       ntriples: "trs/trs-shapes.nt"
       jsonld: "trs/trs-shapes.jsonld"
       turtle: "trs/trs-shapes.ttl"
+
   - prefix: "/ns/asset"
     core_version: "2.0"
     html_uri: "https://archive.open-services.net/wiki/asset-management/OSLC-Asset-Management-Vocabulary/index.html"
@@ -121,6 +136,7 @@ ns_definitions:
       ntriples: "asset/asset.nt"
       jsonld: "asset/asset.jsonld"
       turtle: "asset/asset.ttl"
+
   - prefix: "/ns/auto"
     core_version: "2.0"
     html_uri: "https://archive.open-services.net/wiki/automation/OSLC-Automation-Vocabulary/index.html"
@@ -129,6 +145,7 @@ ns_definitions:
       ntriples: "auto/automation-vocab.nt"
       jsonld: "auto/automation-vocab.jsonld"
       turtle: "auto/automation-vocab.ttl"
+
   - prefix: "/ns/perfmon"
     core_version: "2.0"
     html_uri: "https://archive.open-services.net/wiki/performance-monitoring/OSLC-Performance-Monitoring-Vocabulary/index.html"
@@ -137,6 +154,7 @@ ns_definitions:
       ntriples: "perfmon/performance-monitoring-vocab.nt"
       jsonld: "perfmon/performance-monitoring-vocab.jsonld"
       turtle: "perfmon/performance-monitoring-vocab.ttl"
+
   - prefix: "/ns/ems"
     core_version: "2.0"
     html_uri: "https://archive.open-services.net/wiki/estimation-and-measurement/EMS-1.0-REST-API-Data-Model/index.html"
