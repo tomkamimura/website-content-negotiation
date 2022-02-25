@@ -130,14 +130,14 @@ ns_definitions:
 
    - prefix: "/ns/promcode"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/cs02/promcode-vocab.html"
+    html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/cs03/promcode-vocab.html"
     files:
       rdfxml: "promcode/promcode-vocab.rdf"
       ntriples: "promcode/promcode-vocab.nt"
       jsonld: "promcode/promcode-vocab.jsonld"
       turtle: "promcpromcode/promcode-shapes.ttl"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/cs02/promcode-shapes.html"
+    html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/cs03/promcode-shapes.html"
     files:
       rdfxml: "promcode/promcode-shapes.rdf"
       ntriples: "promcode/promcode-shapes.nt"
