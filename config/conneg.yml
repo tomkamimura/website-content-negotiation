@@ -76,7 +76,7 @@ ns_definitions:
 
   - prefix: "/ns/qm"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/ps01/quality-management-vocab.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/os/quality-management-vocab.html"
     files:
       rdfxml: "qm/quality-management-vocab.rdf"
       ntriples: "qm/quality-management-vocab.nt"
@@ -85,7 +85,7 @@ ns_definitions:
 
   - prefix: "/ns/qm/shapes/2.1"
     core_version: "3.0"
-    html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/ps01/quality-management-shapes.html"
+    html_uri: "https://docs.oasis-open-projects.org/oslc-op/qm/v2.1/os/quality-management-shapes.html"
     files:
       rdfxml: "qm/quality-management-shapes.rdf"
       ntriples: "qm/quality-management-shapes.nt"
