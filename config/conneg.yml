@@ -128,14 +128,16 @@ ns_definitions:
       jsonld: "trs/trs-shapes.jsonld"
       turtle: "trs/trs-shapes.ttl"
 
-   - prefix: "/ns/promcode"
+  - prefix: "/ns/promcode"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/os/promcode-vocab.html"
     files:
       rdfxml: "promcode/promcode-vocab.rdf"
       ntriples: "promcode/promcode-vocab.nt"
       jsonld: "promcode/promcode-vocab.jsonld"
-      turtle: "promcpromcode/promcode-shapes.ttl"
+      turtle: "promcode/promcode-shapes.ttl"
+   
+  - prefix: "/ns/promcode/shapes/1.0"
     core_version: "3.0"
     html_uri: "https://docs.oasis-open.org/oslc-promcode/promcode/v1.0/os/promcode-shapes.html"
     files:
